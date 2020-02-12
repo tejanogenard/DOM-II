@@ -1,3 +1,8 @@
+let drag = document.querySelector('img')
+drag.addEventListener('dragstart', (event) => {
+this.event += 'hold';
+setTimeout(() => (this.event = 'invisible'), 0);
+})
 
 
 //Create mouseover eventLisentener for navigation 
@@ -44,6 +49,23 @@ window.addEventListener("resize", () => {
 })
 
 
+// Create nested click eventListener
+let body = document.querySelector('body')
+body.addEventListener('click', () => {
+    body.style.backgroundColor = "teal"
+})
+
+let buttonGroup = document.querySelector(".btn")
+buttonGroup.addEventListener('click', (event) => {
+    buttonGroup.style.color = "red";
+    event.stopPropagation();
+})
 
 
+//Create prevent Default action on navigation
+// let stopLink = document.querySelector(".menu-item")
+// stopLink.addEventListener('click', (event) => {
+//     event.preventDefault();
+// })
 
+//Create drag function 
