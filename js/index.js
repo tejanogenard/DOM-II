@@ -13,8 +13,7 @@ navigationOff.addEventListener('mouseout', () => {
     navigationOff.style.backgroundColor = ""
     navigationOff.style.textDecoration = ""
 })
-console.log(navigationOn)
-console.log(navigationOff)
+
 
 // Create mouseenter eventListener
  let img = document.querySelector('img')
@@ -26,10 +25,25 @@ img.addEventListener('mouseleave', () => {
     img.style.transform = "scale(1)";
 })
  
-// Create a dblclick evenListener
+// Create a dblclick eventListener
 let changeImg = document.querySelector('img')
 changeImg.addEventListener("dblclick", () => {
     changeImg.src = "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80";
 })
+
+// Create a click eventListener; changes to color of the subtites
+document.querySelectorAll("h2").forEach(el => {
+    el.addEventListener("click", () => {
+        el.style.color = 'teal';
+    })
+})
+
+// Create a resize eventListener
+window.addEventListener("resize", () => {
+    img.src = "https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60";
+})
+
+
+
 
 
