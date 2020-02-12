@@ -1,8 +1,3 @@
-let drag = document.querySelector('img')
-drag.addEventListener('dragstart', (event) => {
-this.event += 'hold';
-setTimeout(() => (this.event = 'invisible'), 0);
-})
 
 
 //Create mouseover eventLisentener for navigation 
@@ -21,10 +16,10 @@ navigationOff.addEventListener('mouseout', () => {
 
 
 // Create mouseenter eventListener
- let img = document.querySelector('img')
- img.addEventListener("mouseenter", () => {
-    img.style.transform = "scale(1.2)";
-    img.style.transition = "transform 1s";
+ let img = document.querySelectorAll('img')
+ img[1].addEventListener("mouseenter", () => {
+    img[1].style.transform = "scale(1.2)";
+    img[1].style.transition = "transform 1s";
 })
 img.addEventListener('mouseleave', () => {
     img.style.transform = "scale(1)";
@@ -35,6 +30,8 @@ let changeImg = document.querySelector('img')
 changeImg.addEventListener("dblclick", () => {
     changeImg.src = "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80";
 })
+
+console.log("this is this the img", img)
 
 // Create a click eventListener; changes to color of the subtites
 document.querySelectorAll("h2").forEach(el => {
@@ -61,11 +58,13 @@ buttonGroup.addEventListener('click', (event) => {
     event.stopPropagation();
 })
 
+let box = document.querySelector('img')
 
-//Create prevent Default action on navigation
-// let stopLink = document.querySelector(".menu-item")
-// stopLink.addEventListener('click', (event) => {
-//     event.preventDefault();
-// })
+box.addEventListener('dragstart', dragStart);
+// box.addEventListener('dragend', dragEnd);
 
-//Create drag function 
+function dragStart(){
+    console.log('start')
+    this.className += 'hold';
+    this.className = 'invisible';
+}
